@@ -366,6 +366,32 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(-
 @media(max-width:760px){.contact-grid{grid-template-columns:1fr;gap:28px}.contact-form .row{grid-template-columns:1fr}}
 .sec-light .eyebrow,.sec-soft .eyebrow{background:var(--yellow);color:#111;padding:5px 11px;border-radius:6px}
 .contact-list li::before{background:#111}
+
+/* ===== MOBILE RESPONSIVENESS FIXES ===== */
+/* Customer-story phone never overflows narrow screens */
+.case-phone img{width:min(280px,100%)}
+
+@media(max-width:680px){
+  /* Hero: reclaim the empty first screen (.hero is NOT a .sec, so its padding was never reduced) */
+  .hero{padding:118px 0 56px}
+  .hero-visual{min-height:340px}
+  /* Title scales down so the no-wrap highlighted phrase can't get clipped */
+  .hero h1{font-size:clamp(2rem,8.5vw,3rem)}
+  /* Declutter floating chips: keep two opposite corners, hide the crowded side ones */
+  .kc-2,.kc-3{display:none}
+  .kchip{font-size:.78rem;padding:7px 14px 7px 7px;gap:9px}
+  .kchip img{width:26px;height:26px}
+  .kc-1{top:2%;left:0}
+  .kc-4{bottom:2%;right:0}
+}
+
+@media(max-width:520px){
+  .hero-logo{width:66%}
+  .hero-visual{min-height:300px}
+  .case-phone img{width:min(260px,100%)}
+  /* Larger tap targets for footer links */
+  .foot-col a,.foot-bottom .legal a{padding:3px 0;display:inline-block}
+}
 </style>
 </head>
 <body>
